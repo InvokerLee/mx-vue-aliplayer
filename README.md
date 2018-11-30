@@ -8,6 +8,18 @@
 
 npm install --save mx-vue-aliplayer
 
+## Usage
+
+```js
+import MxVueAliplayer from 'mx-vue-aliplayer'
+
+export default {
+  components: {
+    MxVueAliplayer
+  }
+}
+```
+
 ## web播放器阿里文档
 
   [Document](https://help.aliyun.com/document_detail/62941.html)
