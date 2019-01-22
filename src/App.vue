@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- example -->
-    <mx-vue-aliplayer ref="player" :source="source" @ready="ready"></mx-vue-aliplayer>
+    <mx-vue-aliplayer ref="player" :source="source" @ready="ready" @error="error"></mx-vue-aliplayer>
     <button @click="play">播放</button>
     <button @click="pause">暂停</button>
     <button @click="replay">重播</button>
@@ -22,6 +22,9 @@ export default {
     }
   },
   methods: {
+    error (e) {
+      console.log(e)
+    },
     ready () {
       console.log('播放器ready了')
     },
