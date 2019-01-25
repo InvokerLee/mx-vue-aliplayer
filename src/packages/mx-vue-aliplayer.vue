@@ -3,7 +3,7 @@
 </template>
 
 <style>
-@import url(http://g.alicdn.com/de/prismplayer/2.8.0/skins/default/aliplayer-min.css);
+@import url(http://g.alicdn.com/de/prismplayer/2.7.3/skins/default/aliplayer-min.css);
 </style>
 <script>
 export default {
@@ -100,7 +100,7 @@ export default {
       if (aliScript === null) {
         aliScript = document.createElement('script')
         aliScript.id = this.sdkId
-        aliScript.src = "http://g.alicdn.com/de/prismplayer/2.8.0/aliplayer-min.js"
+        aliScript.src = "http://g.alicdn.com/de/prismplayer/2.7.3/aliplayer-min.js"
         document.head.appendChild(aliScript)
       }
       aliScript.addEventListener("load", () => {
@@ -167,6 +167,14 @@ export default {
 
           this.instance.on("error", (error) => {
             this.$emit("error", error)
+          })
+
+          this.instance.on("cancelFullScreen", (error) => {
+            this.$emit("cancelFullScreen", error)
+          })
+          
+          this.instance.on("requestFullScreen", (error) => {
+            this.$emit("requestFullScreen", error)
           })
         })
       }
